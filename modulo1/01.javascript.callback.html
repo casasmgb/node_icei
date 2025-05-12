@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecutar Callbacks en Navegador</title>
+</head>
+
+<body>
+    <script>
+        console.log('======CALLBACK=======');
+        function fetchData(callback) {
+            setTimeout(() => {
+                callback('Datos obtenidos');
+            }, 2000);
+        }
+
+        // Ejecución  (data) => { ... } es el parametro, es funcion
+        fetchData((data) => {
+            console.log(data);
+        });
+
+        setTimeout(() => {
+            console.log('después de 1 segundo');
+        }, 1000);
+    </script>
+    <h1>Ejecutar Callbacks en Navegador</h1>
+</body>
+
+</html>

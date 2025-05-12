@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejecutar async/await en Navegador</title>
+</head>
+
+<body>
+    <script>
+        console.log('======PROMESA=======');
+        function fetchDataPromise() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve('Datos obtenidos con async/await');
+                }, 2000);
+            });
+        }
+        async function ejecutar() {
+            const data = await fetchDataPromise();
+            console.log(data);
+            setTimeout(() => {
+                console.log('después de 1 segundo');
+            }, 1000);
+        }
+
+        // Ejecución
+        ejecutar()
+
+    </script>
+    <h1>Ejecutar async/await en Navegador</h1>
+</body>
+
+</html>
